@@ -1,0 +1,25 @@
+{
+  "name": "-practice-with-mentor-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "cross-env bohdan=pizza veronika=borshch PORT=5000 NODE_ENV=development node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VeronikaTerletska/-practice-with-mentor-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VeronikaTerletska/-practice-with-mentor-nodejs/issues"
+  },
+  "homepage": "https://github.com/VeronikaTerletska/-practice-with-mentor-nodejs#readme",
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
