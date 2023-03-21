@@ -1,5 +1,6 @@
 const FilmsModel = require("../models/filmsModel");
-
+// Робота з базою данних, яка знаходиться на вддаленому сервері.
+// DAL = Data Access Layer
 class FilmsService {
   getAllFilms = async () => {
     const filmsCollection = await FilmsModel.find({});

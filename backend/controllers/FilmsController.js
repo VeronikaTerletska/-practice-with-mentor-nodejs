@@ -1,17 +1,19 @@
 const ObjectId = require("mongoose").Types.ObjectId;
-const FilmsModel = require("../models/filmsModel");
+// const FilmsModel = require("../models/filmsModel");
 const asyncHandler = require("express-async-handler");
 const filmsService = require("../services/FilmsService");
 
 class FilmsController {
   // add = asyncHandler(async (req, res) => {
   // 	const { title, rating } = req.body;
+  // контролерна валідація (перевірка)
   // 	if (!title || !rating) {
   // 		res.status(400);
   // 		throw new Error('Provide all required fields');
   // 	}
 
   // 	const film = await FilmsModel.create({ ...req.body });
+  // Валідація бази данних (перевірка)
   // 	if (!film) {
   // 		res.status(400);
   // 		throw new Error('Unable to save in DB');
@@ -28,6 +30,7 @@ class FilmsController {
 
   add = asyncHandler(async (req, res) => {
     const { title, rating } = req.body;
+    // контролерна валідація (перевірка)
     if (!title || !rating) {
       res.status(400);
       throw new Error("Provide all required fields");
@@ -71,7 +74,7 @@ class FilmsController {
       status: "success",
       data: {
         filmsCollection,
-        quntity: filmsCollection.length,
+        quantity: filmsCollection.length,
       },
     });
   });
@@ -102,11 +105,11 @@ class FilmsController {
   });
 
   updateOne = (req, res) => {
-    res.send("Anna is updating one film");
+    res.send("Veronika is updating one film");
   };
 
   removeOne = (req, res) => {
-    res.send("Anna is deliting one film");
+    res.send("Veronika is deliting one film");
   };
 }
 
