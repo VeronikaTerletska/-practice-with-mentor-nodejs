@@ -1,9 +1,14 @@
+const { yellow } = require("colors");
 const express = require("express");
 const path = require("path");
-const configPath = path.join(__dirname, "..", "config", ".env");
-require("colors");
+configPath = path.join(__dirname, "..", "config", ".env");
+// console.log(require("dotenv").config({ path: configPath }));
+// console.log(process.env.PORT);
+// console.log(process.env.veronika);
+// console.log(process.env.andriy);
 require("dotenv").config({ path: configPath });
 const connectDB = require("../config/db");
+require("colors");
 
 const app = express();
 
@@ -25,6 +30,6 @@ app.use(require("./midellewares/errorHandler"));
 connectDB();
 app.listen(process.env.PORT, () => {
   console.log(
-    `Server is running on port ${process.env.PORT}`.green.bold.italic
+    `Server is running on port ${process.env.PORT}`.yellow.bold.italic
   );
 });
