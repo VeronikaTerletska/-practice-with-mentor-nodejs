@@ -100,6 +100,7 @@ app.post(
     }
 
     // якщо все ОК - генеруємо токен
+    // завжди перевіряти токен через сайт jwt.io
 
     const token = generateToken({
       friends: ["bohdan", "andriy", "anna"],
