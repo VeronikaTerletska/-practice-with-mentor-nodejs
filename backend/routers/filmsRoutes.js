@@ -1,4 +1,6 @@
 const express = require("express");
+const rolesMiddleware = require("../midellewares/rolesMiddlewares");
+const auth = require("../midellewares/auth");
 
 const filmsRouter = express.Router();
 
@@ -19,7 +21,12 @@ filmsRouter.post(
 filmsRouter.get("/films/:id", filmsController.getOne);
 
 // Отримати всі фільми
-filmsRouter.get("/films", filmsController.getAll);
+filmsRouter.get(
+  "/films",
+  auth,
+  rolesMiddleware(["ADMIN", "MODERATOR", "USER"]),
+  filmsController.getAll
+);
 
 // Обновити один фільм
 filmsRouter.put("/films/:id", filmsController.updateOne);
